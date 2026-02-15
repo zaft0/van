@@ -54,16 +54,13 @@
 
       <div class="map small">
         <strong>When selecting a device:</strong><br>
-        Use <strong>Washer 1 (AWYDLOOBYZR1)</strong><br>
-        Use <strong>Dryer 4 (AW6S9672XUR1)</strong><br>
+        Use <strong>Washer 8: (To be added)</strong><br>
       </div>
     </div>
 
     <div class="card">
       <div class="row">
-        <button id="washerBtn" disabled>Washer 1 - Full wash</button>
-        <button id="dryer15Btn" disabled>Dryer 4 - 15 min cycle</button>
-        <button id="dryerFullBtn" disabled>Dryer 4 - Full dry</button>
+        <button id="washerBtn" disabled>Washer 8 - Full wash</button>
       </div>
     </div>
 
@@ -80,8 +77,7 @@
     const TX_UUID = "569a2001-b87f-490c-92cb-11ba5ea5167c"; // write
 
     // ===== Device labels =====
-    const WASHER1_ADV_NAME = "AWYDLOOBYZR1";
-    const DRYER4_ADV_NAME = "AW6S9672XUR1";
+    const WASHER8_ADV_NAME = "AWYDLOOBYZR1";
 
     // ===== Commands =====
     const CMD = {
@@ -89,7 +85,7 @@
       VERSION: "[VERSION]",
       COIN_DISABLE: "[COIN:DISABLE:OCCUPIED_LOW]",
       EXEC: "[EXEC]",
-      ACTIVATE_WASHER_FULL: "[ACTIVATE:01:PULSE:OCCUPIED_LOW:00000000:00000032:00000032:0003:GZS979139]",
+      ACTIVATE_WASHER_FULL: "[ACTIVATE:01:PULSE:OCCUPIED_LOW:00000000:00000032:00000032:0003:NZB175325]",
       ACTIVATE_DRYER_FULL:  "[ACTIVATE:01:PULSE:OCCUPIED_LOW:00000000:00000032:00000032:0004:CJS795938]",
       ACTIVATE_DRYER_15:    "[ACTIVATE:01:PULSE:OCCUPIED_LOW:00000000:00000032:00:0001:CJS795938]"
     };
@@ -370,7 +366,7 @@
     els.disconnectBtn.addEventListener("click", disconnect);
 
     els.washerBtn.addEventListener("click", async () => {
-      log("Starting Washer 1: Full wash...");
+      log("Starting Washer: Full wash...");
       await runSequence(CMD.ACTIVATE_WASHER_FULL);
     });
 
@@ -386,8 +382,8 @@
 
     // ===== Init =====
     setConnectedUI(false);
-    log(`Use Washer 1 (${WASHER1_ADV_NAME})`);
-    log(`Use Dryer 4 (${DRYER4_ADV_NAME})`);
+    log(`Use Washer 8 (${WASHER8_ADV_NAME})`);
+
 
     const ua = navigator.userAgent || "";
     if (ua.toLowerCase().includes("firefox")) {
