@@ -414,7 +414,7 @@
     function renderDeviceMap() {
       const lines = ['<strong>When selecting a device:</strong><br>'];
       for (const m of MACHINES) {
-        lines.push(`Use <strong>${m.name} (${m.bluetoothName})</strong><br>`);
+        lines.push(`Use <strong>${m.name}: ${m.bluetoothName}</strong><br>`);
       }
       els.deviceMap.innerHTML = lines.join("");
     }
